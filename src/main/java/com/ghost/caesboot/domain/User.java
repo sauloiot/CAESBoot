@@ -1,11 +1,16 @@
 package com.ghost.caesboot.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Document(collection = "user")
 public class User implements Serializable{
-    private static final long seriaVersionUID = 1l;
+    private static final long serialVersionUID = 1l;
 
+    @Id
     private String id;
     private String name;
     private String email;
