@@ -1,5 +1,6 @@
 package com.ghost.caesboot.resources;
 
+import com.ghost.caesboot.domain.Post;
 import com.ghost.caesboot.domain.User;
 import com.ghost.caesboot.dto.UserDTO;
 import com.ghost.caesboot.services.UserService;
@@ -57,6 +58,12 @@ public class UserResource {
         obj = service.update(obj);
         return ResponseEntity.noContent().build();
     }
+    @RequestMapping(value = "/{id}/posts", method = RequestMethod.GET)
+    public ResponseEntity<List<Post>> findUserPosts(@PathVariable String id) {
+        User obj = service.findById(id);
+        return ResponseEntity.ok().body(obj.getPosts());
+    }
+
 
 
 
