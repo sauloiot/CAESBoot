@@ -28,8 +28,14 @@ public class PostService {
         return repo.findAll();
     }
 
+    //principal
+//    public List<Post> findByTitle(String text){
+//        return repo.findByTitleContainingIgnoreCase(text);
+//    }
+
+    //alternativo
     public List<Post> findByTitle(String text){
-        return repo.findByTitleContainingIgnoreCase(text);
+        return repo.findByTitle(text);
     }
 
 //    public User insert(User obj){
